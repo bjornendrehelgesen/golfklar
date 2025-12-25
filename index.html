@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Golfvaer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+    </div>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">Golfvaer</p>
+        <h1 data-i18n="title">Finn golfvaer der du er</h1>
+        <p class="lead" data-i18n="subtitle">
+          Vi henter vaer og viser om det er gode forhold for golf.
+        </p>
+      </div>
+      <button class="lang-toggle" id="langToggle" type="button">
+        EN / NO
+      </button>
+    </header>
+
+    <main>
+      <section class="panel hero" aria-live="polite">
+        <div>
+          <p class="label" data-i18n="statusLabel">Dagens vurdering</p>
+          <h2 id="statusTitle">--</h2>
+          <p id="statusMessage" class="muted">--</p>
+        </div>
+        <div class="hero-icon" id="heroIcon">--</div>
+      </section>
+
+      <section class="panel controls">
+        <div class="control-row">
+          <button class="primary" id="geoButton" type="button" data-i18n="useLocation">
+            Bruk min posisjon
+          </button>
+          <span class="muted" data-i18n="radiusHint">Soker 40 km rundt deg</span>
+        </div>
+        <div class="control-row">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Sok etter sted (fallback)"
+            data-i18n-placeholder="searchPlaceholder"
+          />
+          <button class="secondary" id="searchButton" type="button" data-i18n="searchButton">
+            Sok
+          </button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3 data-i18n="coursesTitle">Golfbaner i naerheten</h3>
+        <p class="muted" id="coursesMeta">--</p>
+        <ul id="coursesList" class="course-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h3 data-i18n="forecastTitle">7-dagers vaer</h3>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="muted" data-i18n="footerNote">
+        Vaerdata fra met.no. Golfbaner fra OpenStreetMap.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
