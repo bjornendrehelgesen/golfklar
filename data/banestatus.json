@@ -1,0 +1,796 @@
+{
+  "source": "https://mingolf.no/banestatus-er-golfbanen-apen/",
+  "fetched": "2025-12-27T00:16:48",
+  "items": [
+    {
+      "name": "Arendal og Omegn Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Bjaavann Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Grimstad Golfklubb",
+      "status": "Åpen🟢 (vintergreen)",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hovden Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kristiansand Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Mandal Golfklubb",
+      "status": "Åpen🟢",
+      "updated": "09.des"
+    },
+    {
+      "name": "Utsikten GK",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Asker Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Bærum Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Drøbak Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Fet Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Gjerdrum Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Gjersjøen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Grini Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Haga Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hakadal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hauger Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kjekstad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Krokhol Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Lommedalen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Losby Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Miklagard Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Nes Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Nordhaug Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Oppegård Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Oustøen Country Club",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Romerike Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Rommen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Ski Golfklubb",
+      "status": "Åpen 🟢",
+      "updated": "08.des"
+    },
+    {
+      "name": "Soon Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Ullensaker Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Østmarka Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Drammen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Eiker Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hemsedal Golfalpin / Hallingdal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hemsedal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Holtsmark Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kjekstad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kongsberg Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Nesfjellet Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Norefjell Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Ringerike Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Tyrifjord Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Atlungstad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Elverum Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Gjøvik & Toten Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hafjell Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kongsvingers Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Mjøsen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Randsfjorden Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Skei Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sorknes Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Trysil Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Valdres Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Giske Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kristiansund og Omegn Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Molde Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Rauma Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Smøla Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Stranda Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sunndal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sunnmøre Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Surnadal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Tingvoll Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Vanylven Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Volda Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Ålesund Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Bleik Golfstrømbane",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Bodø Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Helgeland Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Lofoten Links",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Narvik Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Polarsirkelen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Salten Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sleneset Gofklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Vesterålen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Oslo Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Grønmo Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Groruddalen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Dalane Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Egersund Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Haugaland Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Haugesund Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Jæren Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Karmøy Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Nordvegen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Ogna Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Preikestolen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Randaberg Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Sandnes Golfklubb (Bærheim)",
+      "status": "Åpen 🟢",
+      "updated": ""
+    },
+    {
+      "name": "Sauda Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Sola Golfklubb",
+      "status": "Åpen 🟢",
+      "updated": ""
+    },
+    {
+      "name": "Stavanger Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": ""
+    },
+    {
+      "name": "Bamble Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Grenland og Omegn Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kragerø Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Norsjø Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Rjukan Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Vrådal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Alta Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hammerfest og Kvalsund Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Harstad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Karasjok Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Midt-Troms Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "North Cape Golf Club",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Tromsø Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Varanger Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Austrått Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Byneset Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Frosta Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hitra Golfklubb",
+      "status": "Åpen 🟢",
+      "updated": "08.des"
+    },
+    {
+      "name": "Klæbu Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Namdal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Namsos Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Nærøysund Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Oppdal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Røros Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Steinkjer Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Stiklestad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Stjørdal Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Trondheim Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Borre Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hof Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Larvik Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Nøtterøy Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sandefjord Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Solum Golfklubb",
+      "status": "Åpen🟢",
+      "updated": "08.des"
+    },
+    {
+      "name": "Tjøme Golfklubb",
+      "status": "Åpen🟢 (vintergreen)",
+      "updated": "08.des"
+    },
+    {
+      "name": "Tønsberg Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Vestfold Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Bergen Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Bjørnefjorden Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Fana Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Florø Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hardanger Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Haugaland Golfklubb (Sveio)",
+      "status": "Åpen 🟢",
+      "updated": "08.des"
+    },
+    {
+      "name": "Herdla Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Kvinnherad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Meland Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Nordfjord Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sandane Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Selje Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sotra Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Stord Golfklubb",
+      "status": "Åpen 🟢",
+      "updated": "08.des"
+    },
+    {
+      "name": "Sunnfjord Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Voss Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Askim Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Borregaard Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Ekholtbruket Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Gamle Fredrikstad Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Halden Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Huseby & Hankø Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Hvaler Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Moss & Rygge Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Mørk Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Onsøy Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Rygge Flystasjon Golf Club",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    },
+    {
+      "name": "Skjeberg Golfklubb",
+      "status": "Stengt 🔴",
+      "updated": "08.des"
+    }
+  ]
+}

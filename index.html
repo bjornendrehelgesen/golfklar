@@ -1,83 +1,880 @@
 <!doctype html>
 <html lang="no">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Golfvaer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golfvær</title>
+    <style>
+      :root {
+        --bg: #f6faf7;
+        --card: #ffffff;
+        --text: #102a1e;
+        --muted: #5e6b65;
+        --accent: #2f8f5b;
+        --accent2: #a8e6c2;
+        --danger: #d64545;
+        --shadow: 0 12px 32px rgba(16, 42, 30, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background: radial-gradient(circle at top, #ffffff, var(--bg) 60%);
+      }
+
+      .page {
+        min-height: 100vh;
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: min(1100px, 100%);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .search-card {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .search-card input {
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid #d9e5de;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .button {
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #ffffff;
+      }
+
+      .button.secondary {
+        background: #e9f4ee;
+        color: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        align-items: center;
+      }
+
+      .hero-main {
+        grid-column: span 2;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .weather-icon {
+        font-size: 64px;
+      }
+
+      .score-block h2 {
+        margin: 0;
+        font-size: 52px;
+        letter-spacing: -0.02em;
+      }
+
+      .score-label {
+        margin-top: 4px;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .course-list {
+        margin-top: 12px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .chip {
+        padding: 8px 12px;
+        background: #f1f6f3;
+        border-radius: 999px;
+        font-size: 14px;
+      }
+
+      .score-panel {
+        background: linear-gradient(135deg, var(--accent2), #d8f7e8);
+        padding: 16px;
+        border-radius: 16px;
+      }
+
+      .score-panel.good {
+        background: linear-gradient(135deg, #b7f2d1, #d9f8e8);
+      }
+
+      .score-panel.ok {
+        background: linear-gradient(135deg, #fff3b0, #ffe3a1);
+      }
+
+      .score-panel.bad {
+        background: linear-gradient(135deg, #ffd5d5, #ffe8e8);
+      }
+
+      .score-panel .status-line {
+        font-weight: 600;
+      }
+
+      .score-panel .status-open {
+        color: var(--accent);
+      }
+
+      .score-panel .status-closed {
+        color: var(--danger);
+      }
+
+      .score-panel p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .days {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+
+      .day-card {
+        min-width: 140px;
+        background: #f1f6f3;
+        border-radius: 16px;
+        padding: 12px;
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .day-card.active {
+        border-color: var(--accent);
+        background: #ffffff;
+      }
+
+      .day-card h4 {
+        margin: 0 0 8px;
+      }
+
+      .day-card .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .detail {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hours {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+        gap: 8px;
+      }
+
+      .hour {
+        background: #f6fbf8;
+        border-radius: 12px;
+        padding: 8px;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .hour.best {
+        background: #e0f6ea;
+        border: 1px solid var(--accent);
+      }
+
+      .state {
+        padding: 16px;
+        border-radius: 12px;
+        background: #f5f8f6;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .state.error {
+        background: #fdeaea;
+        color: var(--danger);
+      }
+
+      .skeleton {
+        background: linear-gradient(90deg, #f0f4f1, #ffffff, #f0f4f1);
+        background-size: 200% 100%;
+        animation: shimmer 1.6s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .search-card {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-main {
+          grid-column: span 1;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="background">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-    </div>
-    <header class="site-header">
-      <div>
-        <p class="eyebrow" data-i18n="eyebrow">Golfvaer</p>
-        <h1 data-i18n="title">Finn golfvaer der du er</h1>
-        <p class="lead" data-i18n="subtitle">
-          Vi henter vaer og viser om det er gode forhold for golf.
-        </p>
+    <!-- Host lokalt: npx serve -->
+    <div class="page">
+      <div class="container">
+        <header>
+          <h1>Golfvær</h1>
+          <p class="subtitle">Velg et sted og finn de beste golfvinduene.</p>
+        </header>
+
+        <section class="card search-card">
+          <input id="locationInput" type="text" placeholder="Skriv inn by eller sted" />
+          <button class="button primary" id="searchBtn">Søk</button>
+          <button class="button secondary" id="geoBtn">Bruk min posisjon</button>
+        </section>
+
+        <div id="stateBox" class="state">Søk etter et sted for å se golfvær</div>
+
+        <section id="heroCard" class="card hero" hidden>
+          <div class="hero-main">
+            <div class="weather-icon" id="heroIcon">⛳️</div>
+            <div class="score-block">
+              <h2 id="heroScore">0</h2>
+              <div class="score-label" id="heroLabel">-</div>
+              <div class="chips" id="heroChips"></div>
+            </div>
+          </div>
+          <div class="score-panel">
+            <p id="heroLocation">Sted: -</p>
+            <p id="heroStatus" class="status-line">Banestatus: -</p>
+            <p id="heroNote">Velg en dag for detaljer.</p>
+          </div>
+        </section>
+
+        <section id="courseCard" class="card" hidden>
+          <strong>Golfbaner i nærheten</strong>
+          <div id="courseList" class="course-list"></div>
+        </section>
+
+        <section id="daysCard" class="card" hidden>
+          <div class="days" id="daysList"></div>
+        </section>
+
+        <section id="detailCard" class="card detail" hidden>
+          <strong id="detailTitle">Detaljer</strong>
+          <div class="hours" id="hoursList"></div>
+        </section>
       </div>
-      <button class="lang-toggle" id="langToggle" type="button">
-        EN / NO
-      </button>
-    </header>
+    </div>
 
-    <main>
-      <section class="panel hero" aria-live="polite">
-        <div>
-          <p class="label" data-i18n="statusLabel">Dagens vurdering</p>
-          <h2 id="statusTitle">--</h2>
-          <p id="statusMessage" class="muted">--</p>
-        </div>
-        <div class="hero-icon" id="heroIcon">--</div>
-      </section>
+    <script>
+      const state = {
+        location: null,
+        timeseries: [],
+        daily: [],
+        selectedDayIndex: 0,
+      };
 
-      <section class="panel controls">
-        <div class="control-row">
-          <button class="primary" id="geoButton" type="button" data-i18n="useLocation">
-            Bruk min posisjon
-          </button>
-          <span class="muted" data-i18n="radiusHint">Soker 40 km rundt deg</span>
-        </div>
-        <div class="control-row">
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Sok etter sted (fallback)"
-            data-i18n-placeholder="searchPlaceholder"
-          />
-          <button class="secondary" id="searchButton" type="button" data-i18n="searchButton">
-            Sok
-          </button>
-        </div>
-      </section>
+      const locationInput = document.getElementById("locationInput");
+      const searchBtn = document.getElementById("searchBtn");
+      const geoBtn = document.getElementById("geoBtn");
+      const stateBox = document.getElementById("stateBox");
+      const heroCard = document.getElementById("heroCard");
+      const daysCard = document.getElementById("daysCard");
+      const detailCard = document.getElementById("detailCard");
+      const heroIcon = document.getElementById("heroIcon");
+      const heroScore = document.getElementById("heroScore");
+      const heroLabel = document.getElementById("heroLabel");
+      const heroChips = document.getElementById("heroChips");
+      const heroNote = document.getElementById("heroNote");
+      const heroLocation = document.getElementById("heroLocation");
+      const heroStatus = document.getElementById("heroStatus");
+      const heroPanel = document.querySelector(".score-panel");
+      const daysList = document.getElementById("daysList");
+      const hoursList = document.getElementById("hoursList");
+      const detailTitle = document.getElementById("detailTitle");
+      const courseCard = document.getElementById("courseCard");
+      const courseList = document.getElementById("courseList");
 
-      <section class="panel">
-        <h3 data-i18n="coursesTitle">Golfbaner i naerheten</h3>
-        <p class="muted" id="coursesMeta">--</p>
-        <ul id="coursesList" class="course-list"></ul>
-      </section>
+      function setState(status, message, isError = false) {
+        stateBox.hidden = status === "ready";
+        stateBox.textContent = message;
+        stateBox.classList.toggle("error", isError);
+        heroCard.hidden = status !== "ready";
+        daysCard.hidden = status !== "ready";
+        detailCard.hidden = status !== "ready";
+        courseCard.hidden = status !== "waiting";
+      }
 
-      <section class="panel">
-        <h3 data-i18n="forecastTitle">7-dagers vaer</h3>
-        <div id="forecastGrid" class="forecast-grid"></div>
-      </section>
-    </main>
+      function setLoading() {
+        setState("loading", "Laster inn ...");
+        stateBox.classList.add("skeleton");
+      }
 
-    <footer class="site-footer">
-      <p class="muted" data-i18n="footerNote">
-        Vaerdata fra met.no. Golfbaner fra OpenStreetMap.
-      </p>
-    </footer>
+      function clearLoading() {
+        stateBox.classList.remove("skeleton");
+      }
 
-    <script src="app.js"></script>
+      function formatTemp(value) {
+        return `${Math.round(value)}°C`;
+      }
+
+      function formatWind(value) {
+        return `${Math.round(value)} m/s`;
+      }
+
+      function formatPrecip(value) {
+        return `${value.toFixed(1)} mm`;
+      }
+
+      function computeGolfScore(temp, wind, precip, symbolCode = "") {
+        const tempScore =
+          temp >= 12 && temp <= 26 ? 100 : temp >= 8 && temp <= 30 ? 70 : 30;
+        const windScore = wind < 8 ? 100 : wind <= 12 ? 70 : 30;
+        const precipScore = precip <= 0.2 ? 100 : precip <= 1 ? 70 : 30;
+        const score = Math.round((tempScore + windScore + precipScore) / 3);
+        const normalized = symbolCode.toLowerCase();
+        const snowPenalty =
+          normalized.includes("snow") || normalized.includes("sleet") ? 0 : score;
+        const finalScore = Math.min(score, snowPenalty);
+        const label = finalScore >= 80 ? "Supert" : finalScore >= 55 ? "OK" : "Dårlig";
+        return { score: finalScore, label };
+      }
+
+      function mapSymbol(code) {
+        const key = (code || "").toLowerCase();
+        if (key.includes("clearsky")) return "☀️";
+        if (key.includes("fair")) return "⛅️";
+        if (key.includes("cloudy")) return "☁️";
+        if (key.includes("rain")) return "🌧️";
+        if (key.includes("sleet")) return "🌧️";
+        if (key.includes("snow")) return "❄️";
+        if (key.includes("fog")) return "🌫️";
+        return "⛳️";
+      }
+
+      async function geocode(query) {
+        const url = new URL("https://nominatim.openstreetmap.org/search");
+        url.searchParams.set("format", "json");
+        url.searchParams.set("q", query);
+        url.searchParams.set("limit", "5");
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Kunne ikke hente sted.");
+        }
+        return response.json();
+      }
+
+      async function fetchForecast(lat, lon) {
+        const url = new URL(
+          "https://api.met.no/weatherapi/locationforecast/2.0/compact"
+        );
+        url.searchParams.set("lat", lat);
+        url.searchParams.set("lon", lon);
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Kunne ikke hente værdata.");
+        }
+        return response.json();
+      }
+
+      function computeDailySummaries(timeseries) {
+        const byDate = new Map();
+        timeseries.forEach((entry) => {
+          const date = new Date(entry.time);
+          const hour = date.getHours();
+          if (hour < 6 || hour > 22) return;
+          const key = date.toISOString().slice(0, 10);
+          if (!byDate.has(key)) byDate.set(key, []);
+          byDate.get(key).push(entry);
+        });
+
+        const summaries = [];
+        for (const [date, entries] of byDate.entries()) {
+          const temps = entries.map((e) => e.data.instant.details.air_temperature);
+          const scores = entries.map((entry) => {
+            const temp = entry.data.instant.details.air_temperature;
+            const wind = entry.data.instant.details.wind_speed;
+            const precip = entry.data.next_1_hours?.details?.precipitation_amount ?? 0;
+            const symbol = entry.data.next_1_hours?.summary?.symbol_code ?? "";
+            return computeGolfScore(temp, wind, precip, symbol).score;
+          });
+          const avgScore = Math.round(
+            scores.reduce((sum, value) => sum + value, 0) / scores.length
+          );
+          const label = avgScore >= 80 ? "Supert" : avgScore >= 55 ? "OK" : "Dårlig";
+          summaries.push({
+            date,
+            entries,
+            minTemp: Math.min(...temps),
+            maxTemp: Math.max(...temps),
+            avgScore,
+            label,
+            icon: mapSymbol(entries[0].data.next_1_hours?.summary?.symbol_code),
+          });
+        }
+
+        return summaries.slice(0, 7);
+      }
+
+      function computeNextHoursAverage(timeseries, hours = 5) {
+        const window = timeseries.slice(0, hours);
+        if (!window.length) return null;
+        const scores = window.map((entry) => {
+          const temp = entry.data.instant.details.air_temperature;
+          const wind = entry.data.instant.details.wind_speed;
+          const precip = entry.data.next_1_hours?.details?.precipitation_amount ?? 0;
+          const symbol = entry.data.next_1_hours?.summary?.symbol_code ?? "";
+          return computeGolfScore(temp, wind, precip, symbol).score;
+        });
+        return Math.round(scores.reduce((sum, value) => sum + value, 0) / scores.length);
+      }
+
+      function normalizeName(value) {
+        if (!value) return "";
+        return value
+          .toLowerCase()
+          .replace(/&/g, " og ")
+          .replace(/[åä]/g, "a")
+          .replace(/[æ]/g, "ae")
+          .replace(/[øö]/g, "o")
+          .replace(/\bgolfklubb(en)?\b/g, "")
+          .replace(/\bgolfclub\b/g, "")
+          .replace(/\bgolfbane\b/g, "")
+          .replace(/\bgolf\b/g, "")
+          .replace(/[^a-z0-9 ]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      let statusIndex = null;
+
+      async function loadBanestatus() {
+        if (statusIndex) return statusIndex;
+        try {
+          const response = await fetch("data/banestatus.json", { cache: "no-store" });
+          if (!response.ok) return null;
+          const data = await response.json();
+          const items = data.items || [];
+          const map = new Map();
+          items.forEach((item) => {
+            const key = normalizeName(item.name);
+            if (key && !map.has(key)) {
+              map.set(key, item);
+            }
+          });
+          statusIndex = { items, map };
+          return statusIndex;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function lookupBanestatus(name) {
+        if (!statusIndex) return null;
+        const key = normalizeName(name);
+        if (!key) return null;
+        if (statusIndex.map.has(key)) {
+          return statusIndex.map.get(key);
+        }
+        let best = null;
+        statusIndex.items.forEach((item) => {
+          const itemKey = normalizeName(item.name);
+          if (!itemKey) return;
+          if (itemKey.includes(key) || key.includes(itemKey)) {
+            if (!best || itemKey.length > normalizeName(best.name).length) {
+              best = item;
+            }
+          }
+        });
+        return best;
+      }
+
+      function getBestEntry(entries) {
+        if (!entries.length) return null;
+        return entries.reduce(
+          (best, entry) => {
+            const temp = entry.data.instant.details.air_temperature;
+            const wind = entry.data.instant.details.wind_speed;
+            const precip = entry.data.next_1_hours?.details?.precipitation_amount ?? 0;
+            const symbol = entry.data.next_1_hours?.summary?.symbol_code ?? "";
+            const { score } = computeGolfScore(temp, wind, precip, symbol);
+            return score > best.score ? { entry, score } : best;
+          },
+          { entry: entries[0], score: -1 }
+        );
+      }
+
+      function renderHero() {
+        const day = state.daily[state.selectedDayIndex];
+        if (!day) return;
+        const best = getBestEntry(day.entries);
+        if (!best) return;
+        const entry = best.entry;
+        const temp = entry.data.instant.details.air_temperature;
+        const wind = entry.data.instant.details.wind_speed;
+        const precip = entry.data.next_1_hours?.details?.precipitation_amount ?? 0;
+        const { score, label } = computeGolfScore(
+          temp,
+          wind,
+          precip,
+          entry.data.next_1_hours?.summary?.symbol_code
+        );
+        heroScore.textContent = score;
+        heroLabel.textContent = label;
+        heroIcon.textContent = mapSymbol(
+          entry.data.next_1_hours?.summary?.symbol_code
+        );
+        heroChips.innerHTML = "";
+        [
+          `Temp ${formatTemp(temp)}`,
+          `Vind ${formatWind(wind)}`,
+          `Nedbør ${formatPrecip(precip)}`,
+        ].forEach((text) => {
+          const chip = document.createElement("span");
+          chip.className = "chip";
+          chip.textContent = text;
+          heroChips.appendChild(chip);
+        });
+        const bestHour = new Date(entry.time).getHours().toString().padStart(2, "0");
+        heroLocation.textContent = `Sted: ${state.location?.name ?? "-"}`;
+        const status = lookupBanestatus(state.location?.name);
+        heroStatus.classList.remove("status-open", "status-closed");
+        let statusClosed = false;
+        if (status) {
+          heroStatus.textContent = `Banestatus: ${status.status}${
+            status.updated ? ` · Oppdatert ${status.updated}` : ""
+          }`;
+          const lower = status.status.toLowerCase();
+          if (lower.includes("stengt")) {
+            heroStatus.classList.add("status-closed");
+            statusClosed = true;
+          } else if (lower.includes("åpen") || lower.includes("apen")) {
+            heroStatus.classList.add("status-open");
+          }
+        } else {
+          heroStatus.textContent = "Banestatus: Ukjent";
+        }
+        heroNote.textContent = `Beste time: ${bestHour}:00 · Score ${score} · Snitt 06–22: ${day.avgScore} (${day.label})${
+          statusClosed ? " · STENGT" : ""
+        }`;
+        heroPanel.classList.remove("good", "ok", "bad");
+        const panelClass =
+          day.avgScore >= 80 ? "good" : day.avgScore >= 55 ? "ok" : "bad";
+        heroPanel.classList.add(panelClass);
+      }
+
+      function renderCourses(courses, fallbackName) {
+        courseList.innerHTML = "";
+        if (!courses.length) {
+          loadLocation(fallbackName, state.location.lat, state.location.lon);
+          return;
+        }
+        courses.forEach((course, index) => {
+          const button = document.createElement("button");
+          button.className = "button secondary";
+          const label = course.name || `Golfbane ${index + 1}`;
+          button.textContent = `${label} · ${formatDistance(course.distance)}`;
+          button.addEventListener("click", () => {
+            loadLocation(label, course.lat, course.lon);
+          });
+          courseList.appendChild(button);
+        });
+        setState("waiting", "Velg en golfbane for å se golfvær.");
+      }
+
+      function formatDistance(km) {
+        if (km < 1) return `${Math.round(km * 1000)} m`;
+        return `${km.toFixed(1)} km`;
+      }
+
+      function renderDays() {
+        daysList.innerHTML = "";
+        state.daily.forEach((day, index) => {
+          const card = document.createElement("div");
+          card.className = `day-card ${index === state.selectedDayIndex ? "active" : ""}`;
+          const date = new Date(day.date);
+          card.innerHTML = `
+            <h4>${date.toLocaleDateString("no-NO", { weekday: "short" })}</h4>
+            <div class="weather-icon">${day.icon}</div>
+            <div class="small">${formatTemp(day.minTemp)} / ${formatTemp(
+            day.maxTemp
+          )}</div>
+            <div class="small">Score ${day.avgScore}</div>
+          `;
+          card.addEventListener("click", () => {
+            state.selectedDayIndex = index;
+            renderDays();
+            renderDetail();
+            renderHero();
+          });
+          daysList.appendChild(card);
+        });
+      }
+
+      function renderDetail() {
+        const day = state.daily[state.selectedDayIndex];
+        if (!day) return;
+        const date = new Date(day.date);
+        detailTitle.textContent = `Time for time · ${date.toLocaleDateString(
+          "no-NO",
+          { weekday: "long", day: "numeric", month: "short" }
+        )}`;
+
+        const scores = day.entries.map((entry) => {
+          const temp = entry.data.instant.details.air_temperature;
+          const wind = entry.data.instant.details.wind_speed;
+          const precip = entry.data.next_1_hours?.details?.precipitation_amount ?? 0;
+          return computeGolfScore(
+            temp,
+            wind,
+            precip,
+            entry.data.next_1_hours?.summary?.symbol_code
+          ).score;
+        });
+        const bestScore = Math.max(...scores);
+
+        hoursList.innerHTML = "";
+        day.entries.forEach((entry, index) => {
+          const temp = entry.data.instant.details.air_temperature;
+          const wind = entry.data.instant.details.wind_speed;
+          const precip = entry.data.next_1_hours?.details?.precipitation_amount ?? 0;
+          const { score } = computeGolfScore(
+            temp,
+            wind,
+            precip,
+            entry.data.next_1_hours?.summary?.symbol_code
+          );
+          const hour = new Date(entry.time).getHours().toString().padStart(2, "0");
+          const item = document.createElement("div");
+          item.className = `hour ${score === bestScore ? "best" : ""}`;
+          item.innerHTML = `
+            <div>${hour}:00</div>
+            <div>${formatTemp(temp)}</div>
+            <div>${formatWind(wind)}</div>
+            <div>${formatPrecip(precip)}</div>
+            <div>Score ${score}</div>
+          `;
+          hoursList.appendChild(item);
+        });
+      }
+
+      function haversineDistance(lat1, lon1, lat2, lon2) {
+        const toRad = (value) => (value * Math.PI) / 180;
+        const dLat = toRad(lat2 - lat1);
+        const dLon = toRad(lon2 - lon1);
+        const rLat1 = toRad(lat1);
+        const rLat2 = toRad(lat2);
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(rLat1) * Math.cos(rLat2) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return 6371 * c;
+      }
+
+      async function fetchLocalCourses(lat, lon) {
+        try {
+          const response = await fetch("data/golfklubber.json", {
+            cache: "no-store",
+          });
+          if (!response.ok) return [];
+          const data = await response.json();
+          return (data.data || [])
+            .map((item) => {
+              const [itemLat, itemLon] = (item.position || "")
+                .split(",")
+                .map((value) => Number(value.trim()));
+              if (!itemLat || !itemLon) return null;
+              return {
+                name: item.title || null,
+                lat: itemLat,
+                lon: itemLon,
+                distance: haversineDistance(lat, lon, itemLat, itemLon),
+              };
+            })
+            .filter(Boolean)
+            .filter((course) => course.distance <= 40)
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, 4);
+        } catch (error) {
+          return [];
+        }
+      }
+
+      async function fetchNearbyCourses(lat, lon) {
+        const localCourses = await fetchLocalCourses(lat, lon);
+        return localCourses;
+      }
+
+      async function loadLocation(name, lat, lon) {
+        setLoading();
+        try {
+          await loadBanestatus();
+          const data = await fetchForecast(lat, lon);
+          state.timeseries = data.properties.timeseries || [];
+          if (!state.timeseries.length) {
+            throw new Error("Ingen værdata tilgjengelig.");
+          }
+          state.daily = computeDailySummaries(state.timeseries);
+          state.selectedDayIndex = 0;
+          state.location = { name, lat, lon };
+          localStorage.setItem(
+            "golfklar:lastLocation",
+            JSON.stringify(state.location)
+          );
+          setState("ready", "");
+          clearLoading();
+          renderHero();
+          renderDays();
+          renderDetail();
+        } catch (error) {
+          clearLoading();
+          setState("error", error.message, true);
+        }
+      }
+
+      async function handleSearch() {
+        const query = locationInput.value.trim();
+        if (!query) {
+          setState("empty", "Skriv inn et sted først.");
+          return;
+        }
+        setLoading();
+        try {
+          const results = await geocode(query);
+          if (!results.length) {
+            clearLoading();
+            setState("empty", "Ingen treff. Prøv et annet sted.");
+            return;
+          }
+          const best = results[0];
+          state.location = {
+            name: best.display_name,
+            lat: Number(best.lat),
+            lon: Number(best.lon),
+          };
+          const courses = await fetchNearbyCourses(state.location.lat, state.location.lon);
+          clearLoading();
+          renderCourses(courses, best.display_name);
+        } catch (error) {
+          clearLoading();
+          setState("error", error.message, true);
+        }
+      }
+
+      function handleGeo() {
+        if (!navigator.geolocation) {
+          setState("error", "Nettleseren støtter ikke geolokasjon.", true);
+          return;
+        }
+        setLoading();
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const { latitude, longitude } = pos.coords;
+            state.location = { name: "Din posisjon", lat: latitude, lon: longitude };
+            fetchNearbyCourses(latitude, longitude)
+              .then((courses) => {
+                clearLoading();
+                renderCourses(courses, "Din posisjon");
+              })
+              .catch((error) => {
+                clearLoading();
+                setState("error", error.message, true);
+              });
+          },
+          () => {
+            clearLoading();
+            setState("error", "Kunne ikke hente posisjon.", true);
+          }
+        );
+      }
+
+      searchBtn.addEventListener("click", handleSearch);
+      locationInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          handleSearch();
+        }
+      });
+      geoBtn.addEventListener("click", handleGeo);
+
+      const saved = localStorage.getItem("golfklar:lastLocation");
+      if (saved) {
+        try {
+          const stored = JSON.parse(saved);
+          locationInput.value = stored.name || "";
+          loadLocation(stored.name, stored.lat, stored.lon);
+        } catch (error) {
+          setState("empty", "Søk etter et sted for å se golfvær");
+        }
+      }
+
+      // TODO V2: legg til sliders for å tilpasse kriterier.
+      // TODO V2: lagre flere favorittsteder lokalt.
+    </script>
   </body>
 </html>

@@ -1,34 +1,31 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-This repository is a static webapp. Key files:
-
-- `index.html`: Page markup and layout.
-- `styles.css`: Visual styling, layout, and animations.
-- `app.js`: Client-side logic (geolocation, course search, weather fetch, i18n).
-- `promt.txt`: Product requirements and design notes.
-- `LICENSE`: Project license.
-
-If you add more features later (maps, notifications), keep new assets grouped in a clear top-level folder (for example, `assets/`) and document any new directories here.
+This repo currently contains a single spec file: `updated prompt.txt` in the root. When implementing the app, keep the web entrypoint at the root (for example `index.html`) unless a `src/` directory is introduced. If you add assets (icons, screenshots), place them under `assets/` and reference them with relative paths.
 
 ## Build, Test, and Development Commands
-This is a static site with no build step. For local development, run a simple static server from the repo root:
-
-- `python3 -m http.server 8000`: serve the site at `http://localhost:8000`.
+There is no build system configured yet. For local development once an `index.html` exists, a simple static server is sufficient:
+- `npx serve` — serves the repository root for local testing.
+If you add a build tool (e.g. Vite), document the exact commands in this section.
 
 ## Coding Style & Naming Conventions
-Keep the codebase lightweight and readable:
-
-- Indentation: 2 spaces.
-- Files: plain HTML/CSS/JS; avoid build tooling unless needed.
-- Naming: `kebab-case` for CSS classes, `camelCase` for JS functions.
-- Language strings: keep Norwegian/English copy in `app.js` and reuse keys.
+Match the formatting of existing files. If you introduce new HTML/CSS/JS, prefer:
+- 2-space indentation and consistent spacing.
+- Kebab-case for filenames (e.g. `golf-score.js`) and CSS class names.
+- Short, descriptive function names in English (e.g. `computeGolfScore`).
+Use plain HTML/CSS/vanilla JS unless the repository explicitly adopts a framework.
 
 ## Testing Guidelines
-No automated tests are configured. If you add tests later, document the framework, file locations, and naming conventions here.
+No test framework is configured. If you add tests:
+- Place them under `tests/` and name them `*.test.js`.
+- Document the runner and commands here (for example `npm test`).
 
 ## Commit & Pull Request Guidelines
-No commit message conventions or PR requirements are recorded in this repository. If you establish a standard, document it here (for example, Conventional Commits like `feat:`, `fix:`), along with PR expectations such as linked issues, screenshots for UI changes, and a brief testing note.
+Commit messages in history are short, imperative, and sentence case (e.g. “Create updated prompt”). Keep that style.
+Pull requests should include:
+- A brief summary of changes and reasoning.
+- Links to relevant issues or specs (like `updated prompt.txt`).
+- Screenshots/GIFs for UI changes when applicable.
 
-## Configuration & Secrets
-This app uses public APIs (met.no, OpenStreetMap/Overpass) and does not require API keys. If you add providers that require keys, keep secrets out of the repo and document required environment variables here.
+## Configuration & Notes
+Keep project-level instructions in the root for easy discovery. If you add environment-specific settings, document defaults and safe values in this file or a `README.md`.
