@@ -1,0 +1,47 @@
+Lag en responsiv webapp (kun HTML/CSS/vanilla JS) som viser “golfvær” for en valgt lokasjon.
+
+KRAV (V1):
+1) UI/Design
+- Minimalistisk, moderne, mye luft. Bruk et 8px spacing system.
+- Bruk systemfont eller “Inter”.
+- Fargepalett (design tokens): 
+  --bg: #F6FAF7, --card: #FFFFFF, --text: #102A1E, --muted: #5E6B65,
+  --accent: #2F8F5B, --accent2: #A8E6C2, --danger: #D64545.
+- Layout:
+  a) Topp: tittel “Golfvær” + liten undertittel.
+  b) Søkekort: input (by/sted) + knapp “Søk” + knapp “Bruk min posisjon”.
+  c) Hovedkort (hero): stort værikon, stor “Golf Score” (0–100), label (Supert/OK/Dårlig),
+     og 3 chips: temperatur, vind, nedbør.
+  d) 7-dagers oversikt: horisontal liste med dag-kort (dagnavn, ikon, min/max temp, score).
+  e) Klikk på en dag -> vis detaljpanel med time-for-time (06–22) og marker beste “golfvindu”.
+- States:
+  - Empty: “Søk etter et sted for å se golfvær”
+  - Loading: spinner/skeleton
+  - Error: tydelig feilmelding
+  - No results: hvis geokoding ikke finner sted
+
+2) Data
+- Bruk met.no Locationforecast API (ingen API-key).
+- Bruk geokoding: Nominatim (OpenStreetMap) for å gjøre stednavn -> lat/lon.
+- Hent time-for-time vær for valgt lat/lon og beregn:
+  - Nåværende forhold (nærmeste time)
+  - 7-dagers dagssammendrag (basert på timer mellom 06–22)
+
+3) Golf Score (0–100)
+- Basér score på temperatur (°C), vind (m/s) og nedbør (mm/h).
+- Terskler:
+  Temperatur: ideelt 12–26, ok 8–30, ellers dårlig.
+  Vind: ideelt <8, ok 8–12, >12 dårlig.
+  Nedbør: ideelt <=0.2, ok 0.2–1, >1 dårlig.
+- Returner {score, label} der label er:
+  80–100 “Supert”, 55–79 “OK”, 0–54 “Dårlig”.
+- Vis i UI med ikon + tekst. Score skal være det primære elementet.
+
+4) Kodekvalitet
+- Ingen frameworks. Del opp JS i funksjoner: geocode(), fetchForecast(), computeDailySummaries(), computeGolfScore().
+- Bruk localStorage for å lagre sist brukte lokasjon.
+- Legg inn TODO-seksjoner for V2: “tilpass kriterier” (sliders) og lagring.
+
+LEVERANSE:
+- Én index.html med innebygd CSS og JS (eller 3 filer om du foretrekker).
+- Kommenter kort hvordan man hoster lokalt (f.eks. `npx serve`).
