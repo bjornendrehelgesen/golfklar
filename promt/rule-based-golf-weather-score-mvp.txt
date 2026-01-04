@@ -1,0 +1,140 @@
+Role:
+You are a product designer and system designer for a mobile-first Norwegian golf weather app.
+This is a decision-support app, not a traditional weather forecast.
+
+Goal:
+Create a strict MVP, rule-based model that calculates a golf weather score from 0–100, where:
+- 100 = perfect golf conditions
+- 0 = completely unsuitable for playing
+
+The score answers:
+“Should I play golf now?”
+
+Design principles:
+- Fast to implement
+- Easy to explain
+- Conservative and honest
+- Mobile-first (minimal text, clear outcome)
+
+Target users:
+Golfers in Norway (all regions), with different weather tolerance.
+
+User modes (must be supported):
+1. Fair-weather golfer (default)
+2. West coast golfer (wind- and rain-tolerant)
+3. After-work evening round
+4. Tournament / important round
+5. Winter / year-round player
+6. Practice round
+7. Beginner
+
+Modes are configurations, not personality types.
+
+Allowed weather inputs (MVP only):
+- Wind speed (average, m/s)
+- Precipitation (none / light / moderate / heavy)
+- Temperature (°C)
+- Feels-like temperature (°C)
+- Daylight remaining (minutes, evening only)
+
+Do NOT use:
+- Wind gusts
+- Weather trends or stability
+- Historical data
+- Machine learning
+- Advanced course data
+- UI design
+- Marketing language
+
+Task:
+Define a strict MVP golf weather score model using these rules:
+
+1) Start from 100 points.
+2) Subtract penalties based on clear thresholds.
+3) Clamp final score to 0–100.
+4) Mode adjustments must be simple and deterministic.
+5) Output must be explainable in max 2 short reasons.
+
+Base penalties (must be included):
+
+Wind (average):
+- ≤4 m/s → 0
+- 5–7 m/s → −10
+- 8–10 m/s → −25
+- >10 m/s → −45
+
+Precipitation:
+- None → 0
+- Light rain → −10
+- Moderate rain → −25
+- Heavy rain or snow → −40
+
+Temperature:
+- ≥15°C → 0
+- 10–14°C → −5
+- 5–9°C → −15
+- <5°C → −30
+
+Feels-like adjustment (apply only one):
+- Feels-like ≤5°C → −10
+- Feels-like ≤0°C → −20
+
+Daylight (evening only):
+- ≥90 min → 0
+- 45–89 min → −15
+- <45 min → −35
+
+Mode adjustments (flat, simple):
+
+- Fair-weather golfer: no change
+- West coast golfer: wind −10, rain −10
+- After-work evening: daylight +10, temp <10°C +5
+- Tournament round: wind +10, rain +10
+- Winter golfer: temperature penalties −15, snow treated as moderate rain
+- Practice round: wind −10, rain −10
+- Beginner: wind +10, rain +10
+
+Score interpretation:
+- 80–100 → Play
+- 60–79 → Play if motivated
+- 40–59 → Only for keen players
+- <40 → Wait
+
+Explainability rules:
+- Return max 2 reasons
+- Reasons must be selected from:
+  “Strong wind”
+  “Rainy conditions”
+  “Cold temperatures”
+  “Feels colder than it is”
+  “Limited daylight”
+- No numbers
+- No advice
+- No moralizing
+
+Now generate code based strictly on the specification above.
+
+Code generation requirements:
+- Language: JavaScript (ES6)
+- Output code only, no explanations
+- Use pure functions
+- One main function:
+  calculateGolfWeatherScore(weather, mode)
+- Return:
+  {
+    score: number (0–100),
+    decision: "play" | "play_if_motivated" | "keen_only" | "wait",
+    reasons: string[] // max 2
+  }
+- Weather input example:
+  {
+    wind: number,              // m/s
+    precipitation: "none" | "light" | "moderate" | "heavy",
+    temperature: number,       // °C
+    feelsLike: number,         // °C
+    daylightMinutes: number | null
+  }
+- Mode is one of the defined user modes
+- No external libraries
+- No UI code
+- No unnecessary comments
