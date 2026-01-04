@@ -1,0 +1,54 @@
+Du er produktsjef og UX-designer for en mobil-først norsk golfvær-app.
+
+Mål:
+Hjelp meg å utforske hvordan appen bør fungere, hvilke funksjoner den bør ha,
+og hvordan “moduser” kan brukes for å tilpasse vurderingen av golfvær.
+
+Kontekst:
+- Appen er for golfere i Norge (alle regioner)
+- Norske golfere har ulik toleranse for vær
+- Appen skal gi tydelig feedback på om det er golfvær eller ikke
+- Appen skal være ærlig, enkel og beslutningsstøttende
+
+Viktig designidé:
+Appen skal støtte flere bruker-moduser som påvirker vurdering og anbefalinger,
+for eksempel:
+- “Vestlending” (vind- og regnvant)
+- “Østlending / fair-weather golfer”
+- “Vintergolf”
+- “Turneringsdag”
+- “Kveldsrunde etter jobb”
+Disse er eksempler – du skal foreslå flere og evt. slå sammen/forenkle.
+
+Oppgaver:
+1) Foreslå 6–8 realistiske golf-moduser for norske forhold
+   - Forklar kort hvem modusen er for
+   - Hva slags vær den tåler bedre/dårligere
+
+2) Foreslå 2–3 hovedbrukerpersonas
+   - Ikke for mange
+   - Fokuser på beslutningsbehov (“skal jeg dra ut eller ikke?”)
+
+3) List 10–12 mulige app-funksjoner
+   - Både enkle og avanserte
+   - Marker hvilke som bør være MVP (første versjon)
+
+4) Skisser hvordan “modus” påvirker appen:
+   - Golf-score
+   - Tekstlig anbefaling
+   - Varsler / tone
+
+5) Foreslå en enkel førstegangsopplevelse (onboarding):
+   - Hvordan brukeren velger modus
+   - Hvordan de kan endre den senere
+   - Hvordan appen forklarer konsekvensene
+
+6) List 5 ting appen bevisst IKKE bør gjøre i første versjon
+
+Føringer:
+- Hold det konkret og beslutningsrettet
+- Unngå markedsføringsspråk
+- Tenk mobil-først
+- Tenk videre enn “værmelding”, dette er en vurderings-app
+
+Svar strukturert med overskrifter og punktlister.
